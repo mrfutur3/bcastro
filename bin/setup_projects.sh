@@ -25,4 +25,6 @@ if [ "$FROM_JENKINS" = "true" ]; then
   oc annotate namespace ${GUID}-jenkins    openshift.io/requester=${USER} --overwrite
   oc annotate namespace ${GUID}-tasks-dev  openshift.io/requester=${USER} --overwrite
   oc annotate namespace ${GUID}-tasks-prod openshift.io/requester=${USER} --overwrite
+  
+  oc project ${GUID}-jenkins
 fi
